@@ -13,8 +13,8 @@ var wiz = new GameObject({width:128, height:128, spriteData:playerData}).makeSpr
 wiz.force=1
 
 //The ground
-var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2-200,height:64,y:canvas.height-32, color:"green", world:level})
-ground.img.src=`images/ground.png`
+var ground = new GameObject({width:canvas.width*10 + 200, x:canvas.width*10/2-200,height:64,y:canvas.height-32, color:"green", world:level})
+ground.img.src=`images/woodfloor2.png`
 
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green", world:level})
@@ -60,7 +60,7 @@ levelItems.add([caveBack.grid, ground, plat, cave.grid]);
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
-sky.img.src = `images/sky.png`
+sky.img.src = `images/sky2.png`
 
 /*
  	//Not used, unless you want a 4th level of paralax
@@ -69,12 +69,12 @@ sky.img.src = `images/sky.png`
 */
 
 //repeating background
-var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/hills.png`
+var rbg = new GameObject({x:level.x, y:level.y + 150, width:1024, height:512})
+rbg.img.src=`images/water.png`
 
 //middleground
-var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
-bg.img.src=`images/bgfull.png`
+var bg = new GameObject({x:level.x - 200 ,y:level.y, width:canvas.width*4, height:canvas.height})
+bg.img.src=`images/shipdeck.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
