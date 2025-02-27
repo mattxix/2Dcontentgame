@@ -19,7 +19,7 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/spritesheet.png`
+		src:`images/spritesheet.png`,
 	},
 	states:{
 		//The idle animation 
@@ -141,7 +141,28 @@ var playerData ={
 				{width:512, height:512, startX:3072, startY:2048},
 				
 			]
-		}
+		},
+		cast:
+		{
+			fps:2,
+			cycle:true,
+			frames:
+			[
+				{width:512, height:512, startX:0, startY:2660},
+				{width:512, height:512, startX:512, startY:2660},
+				{width:512, height:512, startX:1024, startY:2660},
+				{width:512, height:512, startX:1536, startY:2660},
+				{width:512, height:512, startX:2048, startY:2660}, //5
+				{width:512, height:512, startX:2560, startY:2660},
+				{width:512, height:512, startX:3072, startY:2660},
+				{width:512, height:512, startX:3584, startY:2660},
+				{width:512, height:512, startX:4096, startY:2660},
+				{width:512, height:512, startX:4608, startY:2660}, //10
+				{width:512, height:512, startX:5120, startY:2660},
+				{width:512, height:512, startX:5632, startY:2660},
+			
+			]
+		}	
 	}
 		
 }
