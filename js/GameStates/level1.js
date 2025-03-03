@@ -17,8 +17,11 @@ var ground = new GameObject({width:canvas.width*10 + 200, x:canvas.width*10/2-20
 ground.img.src=`images/woodfloor2.png`
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green", world:level})
+var plat = new GameObject({width:256, height:64, y:canvas.height-200, color:"green", world:level})
 
+//A barrel
+var barrel = new GameObject({width:114, height:133,x:canvas.width + 600, y:canvas.height - 131, color:"clear", world:level})
+barrel.img.src='images/barrel_crop.png';
 
 
 var leftBorder = new GameObject({width:50, height:canvas.height, world:level, x:0})
@@ -45,7 +48,7 @@ g1.add([ground, leftBorder, caveHit.grid])
 
 //Used to draw the rectangles
 var rects = new Group();
-rects.add([ground,plat])
+rects.add([ground,plat, barrel])
 
 //used to render the sprites
 var sprites = new Group();
@@ -56,7 +59,7 @@ front.add([cave.grid])
 
 //list of items to be rendered in the level
 var levelItems=new Group();
-levelItems.add([caveBack.grid, ground, plat, cave.grid]);
+levelItems.add([caveBack.grid, ground, plat, cave.grid, barrel]);
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
@@ -95,10 +98,12 @@ for(let i=0; i<100; i++)
 
 //console.log(bullets)
 
+
 /*------------------^^BULLET STUFF^^----------------------*/
 
 gameStates[`level1`] = function()
 {
+	
 	if(!keys[`W`] && !keys[`S`] && !keys[`D`] && !keys[`A`] && !keys[` `] && canShoot && wiz.canJump)
 	{
 		wiz.changeState(`idle`)
@@ -319,6 +324,7 @@ gameStates[`level1`] = function()
 	
 	//Renders front of cave
 	front.play().render(`drawSprite`);
+	barrel.drawStaticImage();
 	
 
 }
